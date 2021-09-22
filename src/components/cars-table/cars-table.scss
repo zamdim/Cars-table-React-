@@ -1,0 +1,138 @@
+.table-container {
+  width: 100%;
+
+  table {
+    border-collapse: separate;
+    border-spacing: 10px;
+    width: 1200px;
+    color: white;
+    background: #211F25;
+    border-radius: 10px;
+
+    th {
+      border: 3px solid black;
+      font-size: 20px;
+    }
+
+    .sort {
+      position: relative;
+      padding: 20px;
+
+      &:hover {
+        background: #34343b;
+        cursor: pointer;
+      }
+
+      &::before {
+        content: "▲";
+        font-size: 20px;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        color: #F9B508;
+      }
+
+      &::after {
+        content: "▼";
+        font-size: 20px;
+        position: absolute;
+        right: 20px;
+        bottom: 10px;
+        color: #F9B508;
+      }
+
+      &.up {
+        &::before {
+          opacity: 0;
+        }
+      }
+
+      &.down {
+        &::after {
+          opacity: 0;
+        }
+      }
+    }
+
+    .chosen {
+      background: #34343b;
+    }
+
+    .img-fit {
+      width: 300px;
+      height: 250px;
+      border: none;
+
+      .delete {
+        width: 100%;
+        padding: 10px;
+        background: #990b0b;
+        border: none;
+        color: white;
+        font-size: 20px;
+        margin-top: 5px;
+
+        &:hover {
+          background: #5f0303;
+          cursor: pointer;
+        }
+      }
+
+      .choose {
+        width: 100%;
+        padding: 10px;
+        background: #F9B508;
+        border: none;
+        color: white;
+        font-size: 20px;
+        margin-top: 5px;
+
+        &:hover {
+          background: #886a0a;
+          cursor: pointer;
+        }
+      }
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    td {
+      border: 1px solid black;
+      text-align: center;
+      font-size: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 1214px) {
+  .table-container {
+    overflow-x: scroll;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .table-container {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 459px) {
+  .table-container {
+    table {
+      width: 790px;
+
+      .img-fit {
+        width: 215px;
+      }
+
+      td {
+        font-size: 20px;
+      }
+    }
+  }
+}

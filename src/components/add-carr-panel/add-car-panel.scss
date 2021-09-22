@@ -1,0 +1,90 @@
+.add-car-panel {
+  padding: 0 0 30px;
+
+  h1 {
+    color: #F9B508;
+  }
+
+  .inputs-container {
+    display: flex;
+    justify-content: space-between;
+
+    input {
+      outline: none;
+      border: 1px solid black;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 1em;
+      width: 260px;
+      color: white;
+      background: #211F25;
+
+      &::placeholder {
+        font-size: 1em;
+      }
+
+      &.error {
+        border-color: red;
+
+        &::placeholder {
+          color: red;
+        }
+      }
+
+      &:focus {
+        border-color: #F9B508;
+      }
+
+      &:hover {
+        border-color: #F9B508;
+      }
+    }
+  }
+
+  button {
+    margin: 20px auto 0 auto;
+    display: block;
+    padding: 10px 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    background: #211F25;
+    color: white;
+    border: 1px solid black;
+
+    &:hover {
+      background: #F9B508;
+    }
+  }
+}
+
+@media screen and (max-width: 1214px) {
+  .add-car-panel{
+    .inputs-container{
+      flex-wrap: wrap;
+      max-width: 650px;
+      justify-content: space-between;
+      margin: 0 auto;
+
+      input{
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 571px){
+  .add-car-panel{
+    .inputs-container{
+      max-width: 260px;
+    }
+  }
+}
+
+@media screen and (max-width: 388px) {
+  .add-car-panel{
+    h1{
+      text-align: center;
+    }
+  }
+}

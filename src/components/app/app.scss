@@ -1,0 +1,10 @@
+.cars {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+@media screen and (max-width: 1214px){
+  .cars {
+    padding: 0 15px;
+  }
+}

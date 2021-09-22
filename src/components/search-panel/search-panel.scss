@@ -1,0 +1,36 @@
+.search-panel{
+  padding: 20px 0;
+  display: flex;
+  justify-content: right;
+
+  input{
+    width: 300px;
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid black;
+    background: #211F25;
+    color: white;
+
+    &::placeholder{
+      font-size: 25px;
+    }
+
+    &:focus {
+      border-color: #F9B508;
+    }
+
+    &:hover {
+      border-color: #F9B508;
+    }
+  }
+}
+
+@media screen and (max-width: 388px){
+  .search-panel{
+    input{
+      width: 100%;
+    }
+  }
+}
