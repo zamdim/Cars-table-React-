@@ -30,14 +30,24 @@ export default class AddCarPanel extends Component {
         const stateArr = Object.keys(this.state);
         let hasError = false;
 
+        const addError = (item) => {
+            hasError = true;
+            const newState = {};
+            newState[item] = {value: '', hasError: true};
+            this.setState(newState);
+        };
+
         stateArr.forEach((item) => {
             if (this.state[item].value === "") {
-                hasError = true;
-                const newState = {};
-                newState[item] = {value: '', hasError: true};
-                this.setState(newState)
+                addError(item);
             }
-        })
+            if (item === "image" && !(/^(http|https):\/\/.+(\.png|\.jpg)$/gm).test(this.state[item].value)) {
+                addError(item);
+            }
+            if (item === "power" && !(/\d/gm).test(this.state[item].value)) {
+                addError(item);
+            }
+        });
 
         if (hasError) {
             return;
@@ -50,8 +60,7 @@ export default class AddCarPanel extends Component {
                 this.setState(newState)
             });
             car.chosen = false;
-            car.id = car.model + Math.floor(Math.random()*100);
-            console.log(car);
+            car.id = car.model + Math.floor(Math.random() * 100);
             this.props.addCar(car);
         }
     };
