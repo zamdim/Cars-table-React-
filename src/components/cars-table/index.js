@@ -17,11 +17,11 @@ const CarsTable = ({displayedElements, sorted, revSorted, onSorted, onDeleted, o
     });
 
     const allCars = displayedElements.map(item => {
-        const {image, brand, model, power, chosen} = item;
+        const {image, brand, model, power, chosen, id} = item;
         const trClazz = chosen ? " chosen" : "";
 
         return (
-            <tr key={model} className={trClazz}>
+            <tr key={id} className={trClazz}>
                 <td className="img-fit">
                     <img src={image} alt="cars"/>
                     <button className="delete" onClick={()=>onDeleted(model)}>Delete car</button>

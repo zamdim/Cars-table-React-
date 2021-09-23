@@ -49,7 +49,9 @@ export default class AddCarPanel extends Component {
                 newState[item] = {value: ''};
                 this.setState(newState)
             });
-            car.chosen = false
+            car.chosen = false;
+            car.id = car.model + Math.floor(Math.random()*100);
+            console.log(car);
             this.props.addCar(car);
         }
     };
